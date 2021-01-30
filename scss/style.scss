@@ -1,0 +1,241 @@
+@import "config";
+@import "global";
+
+header {
+  background: $Very-Pale-Cyan no-repeat center
+    url("../images/bg-hero-desktop.svg");
+  padding-top: 3rem;
+  margin-bottom: clamp(3.75rem, 15vw, 10rem);
+}
+
+.header-container {
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      width: clamp(104px, 23vw, 200px);
+    }
+
+    .btn:hover {
+      color: $Grayish-Blue;
+    }
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    gap: 4.25rem;
+    align-items: center;
+    padding: 4rem 0;
+
+    @include tablet {
+      grid-template-columns: 1fr;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2rem;
+
+      @include tablet {
+        text-align: center;
+        align-items: center;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: clamp(2rem, 12vw, 10rem);
+    min-height: 440px;
+    padding: 3.375rem 2rem 3.375rem 7.5rem;
+    border-radius: 1rem;
+    background: white;
+    box-shadow: 0 0 0.75rem rgba(black, 0.08);
+
+    @include tablet {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 3.5rem 4rem;
+      text-align: center;
+
+      &:nth-child(2) {
+        flex-direction: column;
+      }
+    }
+
+    @include mobile {
+      padding: 3.5rem 1.5rem;
+    }
+  }
+
+  p {
+    color: $Grayish-Blue;
+  }
+
+  .img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+
+    @include tablet {
+      position: unset;
+      transform: none;
+      max-width: 90%;
+    }
+  }
+}
+
+.cta-container {
+  width: min(800px, 100%);
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 0 0.75rem rgba(black, 0.08);
+  padding: 4rem 1rem 3.25rem;
+  text-align: center;
+  transform: translateY(6rem);
+
+  @include mobile {
+    padding: 2.75rem 1rem 2.5rem;
+    transform: translateY(4rem);
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+footer {
+  background: $Very-Dark-Cyan;
+  padding-top: clamp(8.75rem, 30vw, 12rem);
+  padding-bottom: 4rem;
+  color: white;
+
+  img {
+    margin-bottom: 2.5rem;
+  }
+
+  p,
+  a.link,
+  span {
+    color: rgba(white, 0.7);
+  }
+
+  .copy {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+
+    @include tablet {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  gap: 8rem;
+  grid-template-columns: 3fr 3fr 2fr;
+  margin-bottom: 2.75rem;
+
+  @include tablet {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.625rem;
+
+    &-item {
+      display: grid;
+      grid-template-columns: 1.5rem 1fr;
+      gap: 1rem;
+
+      i {
+        padding-top: 0.2rem;
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 7.5rem;
+
+    @include tablet {
+      flex-direction: column;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    li {
+      margin-bottom: 1.75rem;
+    }
+  }
+
+  .social {
+    display: flex;
+    gap: 0.75rem;
+
+    @include tablet {
+      justify-content: center;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid rgba(white, 0.7);
+      color: white;
+      border-radius: 2rem;
+      @extend %tr;
+
+      &:hover {
+        border-color: $Pink;
+        color: $Pink;
+      }
+
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+}

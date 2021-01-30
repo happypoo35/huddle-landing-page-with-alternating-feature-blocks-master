@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Poppins:wght@600&display=swap");
+
+$Pink: hsl(322, 100%, 66%);
+$Very-Pale-Cyan: hsl(193, 100%, 96%);
+$Very-Dark-Cyan: hsl(192, 100%, 9%);
+$Grayish-Blue: hsl(208, 11%, 55%);
+
+%tr {
+  transition: 0.3s ease;
+}
+
+$tablet: 780px;
+$mobile: 530px;
+
+@mixin tablet {
+  @media screen and(max-width:$tablet) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and(max-width:$mobile) {
+    @content;
+  }
+}
